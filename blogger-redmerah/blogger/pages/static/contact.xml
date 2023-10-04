@@ -1,0 +1,40 @@
+<contact-page>
+
+<b:section id='_contact'>
+    <b:widget id='ContactForm1' type='ContactForm' locked='true'>
+        <b:includable id='main'>
+            <form name='contact-form' class='cp-form'>
+                <h1>Hubungi kami</h1>
+                <div class='cp-profile'>
+
+                    <!-- Name begin -->
+                    <input expr:id='data:widget.instanceId + "_contact-form-name"' type="text" name="name" placeholder="Nama" />
+                    <!-- Name end -->
+
+                    <!-- Email begin -->
+                    <input expr:id='data:widget.instanceId + "_contact-form-email"' type="text" name="email" placeholder="Email" />
+                    <!-- Email end -->
+
+                </div>
+                <div class="cp-message">
+
+                    <!-- Message begin -->
+                    <textarea oninput="this.style.height='auto';this.style.height=this.scrollHeight + 'px'" rows="5" expr:id='data:widget.instanceId + "_contact-form-email-message"' name='email-message' placeholder="Masukkan pesan"></textarea>
+                    <!-- Message end -->
+
+                    <button expr:id='data:widget.instanceId + "_contact-form-submit"'>
+                        <div><span class="icon" translate="no">send</span>Kirim</div>
+                    </button>
+
+                    <!-- Notification begin -->
+                    <p expr:id='data:widget.instanceId + "_contact-form-error-message"'></p>
+                    <p expr:id='data:widget.instanceId + "_contact-form-success-message"'></p>
+                    <!-- Notification end -->
+
+                </div>
+            </form>
+        </b:includable>
+    </b:widget>
+</b:section>
+
+</contact-page>

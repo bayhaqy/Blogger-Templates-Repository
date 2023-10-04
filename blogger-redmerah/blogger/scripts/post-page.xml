@@ -1,0 +1,77 @@
+<scripts>
+
+<!-- Hightlight.js -->
+<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+
+<!-- Global post script -->
+<script>(()=&gt;{let t=(t,e=document)=&gt;e.getElementById(t),e=(t,e=document)=&gt;e.querySelector(t),o=(t,e=document)=&gt;e.querySelectorAll(t),n=(t,e,o)=&gt;t.setAttribute(e,o),c=(t,e)=&gt;t.getAttribute(e),l=(t,e)=&gt;{t.innerHTML=e},i=(t,e)=&gt;{t.outerHTML=e},a=t=&gt;t.outerHTML,r=t=&gt;navigator.clipboard.writeText(t),p=(t,e={children:[]})=&gt;{const o=document.createElement(t);for(const[t,c]of Object.entries(e))&quot;children&quot;==t?l(o,c.map((t=&gt;t instanceof Element?a(t):&quot;string&quot;==typeof t?t:&quot;&quot;)).join(&quot;&quot;)):n(o,t,c);return o},s=t(&quot;_pp-sd-copy-btn&quot;),d=t(&quot;_pp-sd-share-btn&quot;),u=null,h=null,g=[],f=t(&quot;_pp-toc-dialog&quot;),m=t(&quot;_pp-share-dialog&quot;),b=t(&quot;_pp-comments-dialog&quot;),_=o(&quot;.pp-content :is(h1,h2,h3,h4)&quot;),k=t=&gt;p(&quot;span&quot;,{children:[t],translate:&quot;no&quot;,class:&quot;icon&quot;});for(const t of o(&quot;.pp-content a&quot;))c(t,&quot;title&quot;)||t.textContent.trim()==c(t,&quot;href&quot;)||(n(t,&quot;title&quot;,c(t,&quot;href&quot;)),n(t,&quot;data-tooltip-position&quot;,&quot;bottom-left&quot;)),c(t,&quot;href&quot;).startsWith(&quot;#&quot;)||(n(t,&quot;target&quot;,&quot;_blank&quot;),n(t,&quot;rel&quot;,&quot;noopener noreferrer&quot;));for(const t of o(&quot;.pp-content img&quot;))t.onclick=e=&gt;window.open(t.src,&quot;_blank&quot;);for(const t of o(&quot;.pp-content table&quot;))i(t,a(p(&quot;div&quot;,{class:&quot;pp-c-table&quot;,children:[t]})));for(const t of _){const e=t.textContent,o=e.toLowerCase().replace(/\s/gms,&quot;-&quot;).replace(/[^\w-]/gms,&quot;&quot;),c=t.tagName.toLowerCase();n(t,&quot;id&quot;,o),l(t,e),g.push(p(&quot;a&quot;,{&quot;data-toc&quot;:c,href:&quot;#&quot;+o,children:[k((()=&gt;{switch(c){case&quot;h3&quot;:return&quot;line_start_square&quot;;case&quot;h4&quot;:return&quot;line_start_arrow&quot;;default:return&quot;line_start_circle&quot;}})()),e.replace(/&lt;/g,&quot;&amp;lt;&quot;).replace(/&gt;/g,&quot;&amp;gt;&quot;)]})),t.onclick=t=&gt;location.href=&quot;#&quot;+o}_.length&gt;0?e(&quot;.pp-tocd-body&quot;).innerHTML+=g.map((t=&gt;a(t))).join(&quot;&quot;):t(&quot;_pp-a-toc-btn&quot;).style.display=&quot;none&quot;;for(const t of o(&quot;.pp-tocd-body&gt;a&quot;))t.onclick=t=&gt;closeDialog();for(const t of o(&quot;.pp-content pre&quot;)){const o=e(&quot;code&quot;,t);let n=&quot;Plain text&quot;;const l=(c(o,&quot;class&quot;)??&quot;&quot;).match(/(?&lt;=language-)[^\s]+/gms);null!=l&amp;&amp;(n=l[0].substring(0,1).toUpperCase()+l[0].substring(1)),c(o,&quot;data-filename&quot;)&amp;&amp;(n=c(o,&quot;data-filename&quot;)),i(t,a(p(&quot;div&quot;,{class:&quot;pp-c-pre&quot;,children:[p(&quot;div&quot;,{children:[p(&quot;code&quot;,{children:[n]}),p(&quot;button&quot;,{children:[k(&quot;content_copy&quot;)],title:&quot;Salin&quot;,&quot;data-tooltip-position&quot;:&quot;left-center&quot;})]}),t]})))}for(const t of o(&quot;.pp-c-pre&quot;)){const o=e(&quot;button&quot;,t),c=e(&quot;.icon&quot;,t),i=e(&quot;pre&gt;code&quot;,t).textContent;let a=null;a&amp;&amp;clearTimeout(a),o.onclick=t=&gt;r(i).then((t=&gt;{l(c,&quot;done&quot;),n(o,&quot;data-tooltip&quot;,&quot;Tersalin&quot;),a=setTimeout((()=&gt;{n(o,&quot;data-tooltip&quot;,&quot;Salin&quot;),l(c,&quot;content_copy&quot;)}),3e3)}))}t(&quot;_pp-a-comments-btn&quot;).onclick=t=&gt;openDialog(b),t(&quot;_pp-ai-comments-btn&quot;).onclick=t=&gt;openDialog(b),t(&quot;_pp-cd-close-btn&quot;).onclick=t=&gt;closeDialog(b),t(&quot;_pp-a-toc-btn&quot;).onclick=t=&gt;openDialog(f),t(&quot;_pp-tocd-close-btn&quot;).onclick=t=&gt;closeDialog(f),t(&quot;_pp-sd-close-btn&quot;).onclick=t=&gt;closeDialog(m),t(&quot;_pp-a-share-btn&quot;).onclick=t=&gt;openDialog(m),t(&quot;_pp-ai-share-btn&quot;).onclick=t=&gt;openDialog(m),d.onclick=async t=&gt;{if(!h)try{await navigator.share({url:c(d,&quot;data-url&quot;),title:c(d,&quot;data-title&quot;)})}catch(t){l(d,&quot;&lt;div&gt;&quot;+a(k(&quot;error&quot;))+&quot;Error&lt;/div&gt;&quot;),h=setTimeout((()=&gt;{l(d,&quot;&lt;div&gt;&quot;+a(k(&quot;more_horiz&quot;))+&quot;Lainnya&lt;/div&gt;&quot;),h=null}),3e3)}},s.onclick=t=&gt;{u||r(c(s,&quot;data-url&quot;)).then((t=&gt;{let e=k(&quot;done&quot;);l(s,&quot;&lt;div&gt;&quot;+a(e)+&quot; Tersalin&lt;/div&gt;&quot;),u=setTimeout((()=&gt;{l(e,&quot;content_copy&quot;),l(s,&quot;&lt;div&gt;&quot;+a(e)+&quot; Salin link&lt;/div&gt;&quot;),u=null}),2e3)}))}})();</script>
+
+<!-- More posts -->
+<script><![CDATA[
+(() => {
+    let
+        elQuery = (selector, parent = document) => parent.querySelector(selector),
+        setInnerEl = (element, value) => { element.innerHTML = value },
+        getInnerEl = (element) => element.innerHTML,
+        getOuterEl = (element) => element.outerHTML,
+        setAttr = (element, qualifiedName, value) => element.setAttribute(qualifiedName, value),
+        h = (tagName, attr={children: []}) => {
+            const e = document.createElement(tagName)
+            for (const [key, value] of Object.entries(attr)){
+                if (key == 'children'){
+                    setInnerEl(e, value.map(v => {
+                        if (v instanceof Element) return getOuterEl(v)
+                        else if (typeof v == 'string') return v
+                        return ''
+                    }).join(''))
+                } else setAttr(e, key, value)
+            }
+            return e
+        }
+    ;
+
+    fetch('<data:blog.homepageUrl>/feeds/posts/default?start-index=1&max-results=7&alt=json')
+    .then(res => res.json())
+    .then(json => {
+        const
+            element = elQuery('.pp-more-articles>div'),
+            posts = json.feed.entry
+        ;
+        let i = 0;
+
+        if (!posts) return;
+
+        for (const post of posts){
+            if (i > 5) return;
+            const
+                title = post.title.$t,
+                date = new Date(Date.parse(post.published.$t)),
+                labels = post.category ?? [],
+                thumbnailUrl = post.media$thumbnail.url ?? '',
+                url = post.link[4].href
+            ;
+
+            if (url != '<data:blog.url>'){
+                setInnerEl(
+                    element,
+                    getInnerEl(element)
+                    + getOuterEl(h('a', {href: url, itemprop: "blogPost", itemscope: '', itemtype: 'https://schema.org/BlogPosting', children: [
+                        h('meta', {content: thumbnailUrl.replace('/s72-c', '/s500'), itemprop: 'thumbnailUrl'}),
+                        h('meta', {content: url, itemprop: 'url'}),
+                        h('meta', {content: labels.map(e => e.term).join(','), itemprop: 'keywords'}),
+                        h('img', {itemprop: 'image', alt: title, src: thumbnailUrl.replace('/s72-c', '/s500')}),
+                        h('code', {children: [h('time', {itemprop: 'datePublished', datetime: date.toISOString(), children: [date.toLocaleDateString("id-ID", {year: 'numeric', month: 'long', day: 'numeric'})]})]}),
+                        h('h2', {itemprop: "headline", children: [title]}),
+                        h('div', {children: labels.map(e => h('code', {children: [e.term]}))})
+                    ]}))
+                );
+            }
+
+            ++i;
+        }
+    });
+})()
+]]></script>
+
+</scripts>

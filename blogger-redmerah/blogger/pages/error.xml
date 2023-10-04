@@ -1,0 +1,12 @@
+<error-page>
+
+<main>
+    <h1>404</h1>
+    <h2>Halaman Tidak Ditemukan</h2>
+    <p>Mohon maaf, kami tidak bisa menemukan halaman yang Anda cari</p>
+    <div>
+        <a expr:href='data:blog.homepageUrl'><div><span class="icon" translate="no">home</span>Beranda</div></a>
+    </div>
+</main>
+
+</error-page>

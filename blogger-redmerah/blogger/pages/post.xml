@@ -1,0 +1,370 @@
+<post-page>
+
+<b:section id='_post'>
+    <b:widget id='Blog2' type='Blog' locked='true'>
+        <b:widget-settings>
+            <b:widget-setting name='showDateHeader'>true</b:widget-setting>
+            <b:widget-setting name='style.textcolor'>#ffffff</b:widget-setting>
+            <b:widget-setting name='showShareButtons'>true</b:widget-setting>
+            <b:widget-setting name='showCommentLink'>true</b:widget-setting>
+            <b:widget-setting name='style.urlcolor'>#ffffff</b:widget-setting>
+            <b:widget-setting name='showAuthor'>true</b:widget-setting>
+            <b:widget-setting name='style.linkcolor'>#ffffff</b:widget-setting>
+            <b:widget-setting name='style.unittype'>TextAndImage</b:widget-setting>
+            <b:widget-setting name='style.bgcolor'>#ffffff</b:widget-setting>
+            <b:widget-setting name='reactionsLabel'/>
+            <b:widget-setting name='showAuthorProfile'>true</b:widget-setting>
+            <b:widget-setting name='style.layout'>1x1</b:widget-setting>
+            <b:widget-setting name='showLabels'>true</b:widget-setting>
+            <b:widget-setting name='showLocation'>true</b:widget-setting>
+            <b:widget-setting name='showTimestamp'>true</b:widget-setting>
+            <b:widget-setting name='postsPerAd'>1</b:widget-setting>
+            <b:widget-setting name='showBacklinks'>true</b:widget-setting>
+            <b:widget-setting name='style.bordercolor'>#ffffff</b:widget-setting>
+            <b:widget-setting name='showInlineAds'>true</b:widget-setting>
+            <b:widget-setting name='showReactions'>true</b:widget-setting>
+        </b:widget-settings>
+        <b:includable id='main'>
+            <article itemscope='itemscope' itemtype="https://schema.org/BlogPosting">
+
+                <b:loop values='data:posts' var='post'>
+                    <b:if cond='data:post.firstImageUrl'>
+                        <meta expr:content='data:post.firstImageUrl' itemprop="thumbnailUrl"/>
+                        <meta expr:content='data:post.firstImageUrl' itemprop="image"/>
+                    </b:if>
+                    <meta expr:content="data:post.title" itemprop="name"/>
+                    <meta expr:content="data:post.url" itemprop="url"/>
+
+                    <!-- Header begin -->
+                    <header>
+                        <code><time itemprop='datePublished' expr:datetime='data:post.date.iso8601'><data:post.date/></time></code>
+                        <h1 itemprop="headline"><data:post.title/></h1>
+                        <div class='pp-actions'>
+                            <a expr:href='data:post.authorProfileUrl' itemprop="author" itemscope="itemscope" itemtype="https://schema.org/Person" rel='author'><div>
+                                <meta expr:content='data:post.authorProfileUrl' itemprop='url'/>
+
+                                <b:if cond='data:post.authorPhoto.url'>
+                                    <img expr:src='resizeImage(data:post.authorPhoto.url, 32, "1:1")' expr:alt='data:post.author' itemprop='image'/>
+                                </b:if>
+                                <span itemprop="name"><data:post.author/></span>
+                            </div></a>
+                            <button id="_pp-a-toc-btn" title="Daftar isi">
+                                <span class="icon" translate="no">format_list_bulleted</span>
+                            </button>
+                            <button id="_pp-a-share-btn" title="Bagikan">
+                                <span class="icon" translate="no">share</span>
+                            </button>
+                            <b:if cond='!data:view.isPage'>
+                                <button id="_pp-a-comments-btn" title="Komentar">
+                                    <span class="icon" translate="no">chat</span>
+                                </button>
+                            </b:if>
+                        </div>
+                    </header>
+                    <!-- Header end -->
+
+                    <!-- Body begin -->
+                    <main>
+                        <div class='pp-content-ads-wrapper'>
+                            <div class='pp-content-wrapper'>
+
+                                <!-- Content begin -->
+                                <div class='pp-content' expr:id='"post-body-" + data:post.id' itemprop="articleBody">
+                                    <data:post.body/>
+                                </div>
+                                <!-- Content end -->
+
+                                <!-- Labels begin -->
+                                <div class="pp-labels">
+                                    <b:loop values='data:post.labels' var='label'>
+                                        <a expr:href='data:label.url' rel='tag'><div itemprop='keywords'><data:label.name/></div></a>
+                                    </b:loop>
+                                </div>
+                                <!-- Labels end -->
+
+                                <b:if cond='!data:view.isPage'>
+
+                                    <!-- Actions begin -->
+                                    <div class="pp-actions-inside">
+                                        <button id="_pp-ai-comments-btn" title="Komentar">
+                                            <div><span class="icon" translate="no">chat</span> Komentar</div>
+                                        </button>
+                                        <button id="_pp-ai-share-btn" title="Bagikan">
+                                            <div><span class="icon" translate="no">share</span> Bagikan</div>
+                                        </button>
+                                    </div>
+                                    <!-- Actions end -->
+
+                                </b:if>
+
+                            </div>
+
+                            <div class="pp-ads-wrapper">
+                                <b:if cond='!data:view.isPage'>
+                                    <div><script async='' src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7971863585641284" crossorigin="anonymous"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7971863585641284" data-ad-slot="7831927058" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div>
+                                </b:if>
+                            </div>
+                        </div>
+
+                        <b:if cond='!data:view.isPage'>
+
+                            <!-- More articles begin -->
+                            <div class='pp-more-articles'>
+                                <h2>Lainnya</h2>
+                                <div class="pp-ma-articles" itemscope="itemscope" itemtype="https://schema.org/Blog">
+                                    <meta content="Artikel lainnya" itemprop="name"/>
+                                    <meta content="Artikel-artikel lainnya yang terbaru dari RedMerah" itemprop="description"/>
+                                </div>
+                            </div>
+                            <!-- More articles end -->
+
+                        </b:if>
+
+                    </main>
+                    <!-- Body end -->
+
+                    <b:if cond='!data:view.isPage'>
+
+                        <!-- Comments dialog begin -->
+                        <dialog id="_pp-comments-dialog">
+                            <div>
+                                <h2>Komentar</h2>
+                                <div class="pp-cd-body">
+                                    <b:if cond='data:post.showThreadedComments'>
+                                        <b:include data='post' name='threaded_comments'/>
+
+                                        <b:else/>
+                                        <b:include data='post' name='comments'/>
+                                    </b:if>
+                                </div>
+                                <div class="dialog-actions">
+                                    <button id="_pp-cd-close-btn"><div>Tutup</div></button>
+                                </div>
+                            </div>
+                        </dialog>
+                        <!-- Comments dialog end -->
+
+                    </b:if>
+
+                    <!-- Table of content dialog begin -->
+                    <dialog id="_pp-toc-dialog">
+                        <div>
+                            <h2>Daftar isi</h2>
+                            <div class="pp-tocd-body"></div>
+                            <div class="dialog-actions">
+                                <button id="_pp-tocd-close-btn"><div>Tutup</div></button>
+                            </div>
+                        </div>
+                    </dialog>
+                    <!-- Table of content dialog end -->
+
+                    <!-- Share dialog begin -->
+                    <dialog id="_pp-share-dialog">
+                        <div>
+                            <h2>Bagikan</h2>
+                            <div class="pp-sd-body">
+                                <a expr:href='data:post.sharePostUrl + "&amp;target=twitter"' target='_blank'>
+                                    <div><svg viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg"> <g clip-path="url(#clip0_2_2)"> <path d="M7.54753 22.5011C16.6042 22.5011 21.5577 14.9977 21.5577 8.49087C21.5577 8.27769 21.5577 8.06553 21.5434 7.85337C22.507 7.15664 23.3388 6.29393 24 5.30562C23.1013 5.70384 22.148 5.965 21.1718 6.08037C22.1997 5.46502 22.9691 4.49717 23.3366 3.35694C22.37 3.93047 21.3126 4.33466 20.2099 4.55206C19.4675 3.76266 18.4856 3.23995 17.4162 3.0648C16.3467 2.88966 15.2494 3.07186 14.294 3.58319C13.3385 4.09453 12.5783 4.90651 12.1308 5.89347C11.6833 6.88043 11.5736 7.98736 11.8186 9.04297C9.86091 8.94481 7.94575 8.43606 6.19744 7.54974C4.44913 6.66341 2.90675 5.41933 1.67044 3.89825C1.04077 4.98223 0.847899 6.26545 1.13111 7.48663C1.41431 8.70782 2.1523 9.77516 3.19481 10.4713C2.41123 10.4481 1.64473 10.2367 0.96 9.85503V9.91737C0.960299 11.0542 1.35384 12.156 2.07387 13.0358C2.7939 13.9156 3.79608 14.5192 4.91044 14.7443C4.18551 14.942 3.4249 14.9709 2.68706 14.8287C3.0017 15.8072 3.61428 16.6628 4.43912 17.2759C5.26396 17.889 6.2598 18.229 7.28738 18.2483C5.54376 19.6186 3.38982 20.3625 1.17216 20.3603C0.780385 20.3595 0.388994 20.3358 0 20.2892C2.25181 21.7343 4.87192 22.5008 7.54753 22.4972" fill="#1DA1F2"/> </g> <defs> <clipPath id="clip0_2_2"> <rect width="24" height="24" fill="white" transform="translate(0.333328 0.791668)"/> </clipPath> </defs> </svg>Twitter</div>
+                                </a>
+                                <a expr:href='data:post.sharePostUrl + "&amp;target=facebook"' expr:onclick='"window.open(this.href, \"_blank\", \"height=430,width=640\"); return false;"' target='_blank'>
+                                    <div> <svg viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg"> <g clip-path="url(#clip0_2_4)"> <path d="M24.8835 12.0848C24.8835 5.45663 19.5116 0.0847549 12.8835 0.0847549C6.25539 0.0847549 0.883514 5.45663 0.883514 12.0848C0.883514 18.0749 5.26914 23.0394 11.0095 23.9399V15.5563H7.96492V12.0848H11.0095V9.44147C11.0095 6.43632 12.7977 4.77319 15.5399 4.77319C16.8548 4.77319 18.2291 5.00991 18.2291 5.00991V7.9621H16.717C15.2245 7.9621 14.7641 8.88929 14.7641 9.83616V12.0848H18.0913L17.5588 15.5563H14.7641V23.9399C20.4979 23.0394 24.8835 18.0749 24.8835 12.0848Z" fill="#1877F2"/> <path d="M17.5518 15.5563L18.0848 12.0848H14.7576V9.83616C14.7576 8.88929 15.2245 7.9621 16.7104 7.9621H18.2226V5.00991C18.2226 5.00991 16.8482 4.77319 15.5334 4.77319C12.7916 4.77319 11.0029 6.43679 11.0029 9.44147V12.0848H7.95836V15.5563H11.0029V23.9399C11.6146 24.0384 12.239 24.0848 12.877 24.0848C13.5149 24.0848 14.1393 24.0323 14.751 23.9399V15.5563H17.5518Z" fill="white"/> </g> <defs> <clipPath id="clip0_2_4"> <rect width="24" height="24" fill="white" transform="translate(0.883514 0.0847549)"/> </clipPath> </defs> </svg> Facebook </div>
+                                </a>
+                                <a expr:href='data:post.sharePostUrl + "&amp;target=pinterest"' target='_blank'>
+                                    <div> <svg viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg"> <g clip-path="url(#clip0_2_8)"> <path d="M12.1688 0.346826C5.54174 0.346826 0.168785 5.71929 0.168785 12.3466C0.168785 17.2603 3.12349 21.4814 7.35155 23.3374C7.31779 22.4994 7.3455 21.4936 7.56041 20.5819C7.7911 19.6077 9.10447 14.0432 9.10447 14.0432C9.10447 14.0432 8.72105 13.2771 8.72105 12.1446C8.72105 10.3664 9.75182 9.03831 11.0353 9.03831C12.1268 9.03831 12.6541 9.85813 12.6541 10.8398C12.6541 11.937 11.9543 13.5783 11.5944 15.0984C11.2938 16.3713 12.2326 17.4095 13.4884 17.4095C15.7619 17.4095 17.2932 14.4894 17.2932 11.0296C17.2932 8.39962 15.5218 6.4311 12.3001 6.4311C8.66006 6.4311 6.39238 9.14563 6.39238 12.1778C6.39238 13.2232 6.70064 13.9605 7.18344 14.5313C7.40546 14.7935 7.43632 14.8991 7.35592 15.2002C7.29838 15.4209 7.16616 15.9525 7.11146 16.1632C7.03154 16.467 6.78534 16.5757 6.51064 16.4634C4.83408 15.779 4.0532 13.943 4.0532 11.8791C4.0532 8.4703 6.92805 4.38298 12.6294 4.38298C17.2108 4.38298 20.2261 7.69823 20.2261 11.257C20.2261 15.9643 17.6091 19.481 13.7515 19.481C12.4559 19.481 11.2373 18.7807 10.8199 17.9854C10.8199 17.9854 10.1232 20.7501 9.97564 21.284C9.72129 22.2092 9.22326 23.1338 8.76789 23.8545C9.84716 24.1732 10.9872 24.3466 12.1688 24.3466C18.7953 24.3466 24.168 18.9741 24.168 12.3466C24.168 5.71929 18.7953 0.346826 12.1688 0.346826Z" fill="#CD1E25"/> </g> <defs> <clipPath id="clip0_2_8"> <rect width="23.9991" height="24" fill="white" transform="translate(0.168785 0.346649)"/> </clipPath> </defs> </svg> Pinterest </div>
+                                </a>
+                                <a expr:href='data:post.sharePostUrl + "&amp;target=email"' target='_blank'>
+                                    <div><span class="icon" translate="no">email</span> Email</div>
+                                </a>
+                                <button id="_pp-sd-copy-btn" data-url="https://redmerah.com/">
+                                    <div><span class="icon" translate="no">content_copy</span> Salin link</div>
+                                </button>
+                                <button id="_pp-sd-share-btn" data-url="https://redmerah.com/" data-title="Perbedaan List, Tuple, dan Set pada Python">
+                                    <div><span class="icon" translate="no">more_horiz</span> Lainnya</div>
+                                </button>
+                            </div>
+                            <div class="dialog-actions">
+                                <button id="_pp-sd-close-btn"><div>Tutup</div></button>
+                            </div>
+                        </div>
+                    </dialog>
+                    <!-- Share dialog end -->
+
+
+                </b:loop>
+            </article>
+        </b:includable>
+        <b:includable id='comment-form' var='post'>
+            <div class='comment-form'>
+                <b:if cond='data:mobile'>
+                    <p><data:blogCommentMessage/></p>
+                    <data:blogTeamBlogMessage/>
+                    <a expr:href='data:post.commentFormIframeSrc' id='comment-editor-src'/>
+                    <iframe allowtransparency='true' class='blogger-iframe-colorize blogger-comment-from-post' expr:height='data:cmtIframeInitialHeight' frameborder='0' id='comment-editor' name='comment-editor' src='' style='display: none' width='100%'/>
+
+                    <b:else/>
+                    <p><data:blogCommentMessage/></p>
+                    <data:blogTeamBlogMessage/>
+                    <a expr:href='data:post.commentFormIframeSrc' id='comment-editor-src'/>
+                    <iframe allowtransparency='true' class='blogger-iframe-colorize blogger-comment-from-post' expr:height='data:cmtIframeInitialHeight' frameborder='0' id='comment-editor' name='comment-editor' src='' width='100%'/>
+                </b:if>
+
+                <data:post.cmtfpIframe/>
+                <script>BLOG_CMT_createIframe(&#39;<data:post.appRpcRelayPath/>&#39;);</script>
+            </div>
+        </b:includable>
+        <b:includable id='commentDeleteIcon' var='comment'>
+            <span expr:class='"item-control " + data:comment.adminClass'>
+                <b:if cond='data:showCmtPopup'>
+                    <div class='goog-toggle-button'>
+                        <div class='goog-inline-block comment-action-icon'/>
+                    </div>
+
+                    <b:else/>
+                    <a class='comment-delete' expr:href='data:comment.deleteUrl' expr:title='data:top.deleteCommentMsg'>
+                        <img src='https://resources.blogblog.com/img/icon_delete13.gif'/>
+                    </a>
+                </b:if>
+            </span>
+        </b:includable>
+        <b:includable id='comments' var='post'>
+            <b:if cond='data:post.allowComments'>
+                <b:if cond='data:post.commentPagingRequired'>
+                    <span class='paging-control-container'>
+                        <b:if cond='data:post.hasOlderLinks'>
+                            <a expr:class='data:post.oldLinkClass' expr:href='data:post.oldestLinkUrl'><data:post.oldestLinkText/></a>
+
+                            <a expr:class='data:post.oldLinkClass' expr:href='data:post.olderLinkUrl'><data:post.olderLinkText/></a>
+
+                        </b:if>
+
+                        <data:post.commentRangeText/>
+
+                        <b:if cond='data:post.hasNewerLinks'>
+
+                            <a expr:class='data:post.newLinkClass' expr:href='data:post.newerLinkUrl'><data:post.newerLinkText/></a>
+
+                            <a expr:class='data:post.newLinkClass' expr:href='data:post.newestLinkUrl'><data:post.newestLinkText/></a>
+                        </b:if>
+                    </span>
+                </b:if>
+
+                <div expr:id='data:widget.instanceId + "_comments-block-wrapper"'>
+                    <dl expr:class='data:post.avatarIndentClass' id='comments-block'>
+                        <b:loop values='data:post.comments' var='comment'>
+                            <dt expr:class='"comment-author " + data:comment.authorClass' expr:id='data:comment.anchorName'>
+                            <b:if cond='data:comment.favicon'>
+                                <img expr:src='data:comment.favicon' height='16px' style='margin-bottom:-2px;' width='16px'/>
+                            </b:if>
+                            <a expr:name='data:comment.anchorName'/>
+                            <b:if cond='data:blog.enabledCommentProfileImages'>
+                                <data:comment.authorAvatarImage/>
+                            </b:if>
+                            <b:if cond='data:comment.authorUrl'>
+                                <a expr:href='data:comment.authorUrl' rel='nofollow'><data:comment.author/></a>
+
+                                <b:else/>
+                                <data:comment.author/>
+                            </b:if>
+                            <data:commentPostedByMsg/>
+                            </dt>
+                            <dd class='comment-body' expr:id='data:widget.instanceId + data:comment.cmtBodyIdPostfix'>
+                                <b:if cond='data:comment.isDeleted'>
+                                    <span class='deleted-comment'><data:comment.body/></span>
+
+                                    <b:else/>
+                                    <p><data:comment.body/></p>
+                                </b:if>
+                            </dd>
+                            <dd class='comment-footer'>
+                                <span class='comment-timestamp'>
+                                    <a expr:href='data:comment.url' title='comment permalink'>
+                                    <data:comment.timestamp/>
+                                    </a>
+                                    <b:include data='comment' name='commentDeleteIcon'/>
+                                </span>
+                            </dd>
+                        </b:loop>
+                    </dl>
+                </div>
+
+                <b:if cond='data:post.commentPagingRequired'>
+                    <span class='paging-control-container'>
+                        <a expr:class='data:post.oldLinkClass' expr:href='data:post.oldestLinkUrl'><data:post.oldestLinkText/></a>
+                        <a expr:class='data:post.oldLinkClass' expr:href='data:post.olderLinkUrl'><data:post.olderLinkText/></a>
+
+                        <data:post.commentRangeText/>
+
+                        <a expr:class='data:post.newLinkClass' expr:href='data:post.newerLinkUrl'><data:post.newerLinkText/></a>
+                        <a expr:class='data:post.newLinkClass' expr:href='data:post.newestLinkUrl'><data:post.newestLinkText/></a>
+                    </span>
+                </b:if>
+
+                <p class='comment-footer'>
+                    <b:if cond='data:post.embedCommentForm'>
+                        <b:if cond='data:post.allowNewComments'>
+                            <b:include data='post' name='comment-form'/>
+
+                            <b:else/>
+                            <data:post.noNewCommentsText/>
+                        </b:if>
+
+                        <b:elseif cond='data:post.allowComments'/>
+                        <a expr:href='data:post.addCommentUrl' expr:onclick='data:post.addCommentOnclick'><data:postCommentMsg/></a>
+                    </b:if>
+                </p>
+            </b:if>
+            <b:if cond='data:showCmtPopup'>
+                <div id='comment-popup'>
+                    <iframe allowtransparency='true' frameborder='0' id='comment-actions' name='comment-actions' scrolling='no' />
+                </div>
+            </b:if>
+        </b:includable>
+        <b:includable id='threaded-comment-form' var='post'>
+            <div class='comment-form'>
+                <b:if cond='data:mobile'>
+                    <p><data:blogCommentMessage/></p>
+                    <data:blogTeamBlogMessage/>
+                    <a expr:href='data:post.commentFormIframeSrc' id='comment-editor-src'/>
+                    <iframe allowtransparency='true' class='blogger-iframe-colorize blogger-comment-from-post' expr:height='data:cmtIframeInitialHeight' frameborder='0' id='comment-editor' name='comment-editor' src='' style='display: none' width='100%'/>
+
+                    <b:else/>
+                    <p><data:blogCommentMessage/></p>
+                    <data:blogTeamBlogMessage/>
+                    <a expr:href='data:post.commentFormIframeSrc' id='comment-editor-src'/>
+                    <iframe allowtransparency='true' class='blogger-iframe-colorize blogger-comment-from-post' expr:height='data:cmtIframeInitialHeight' frameborder='0' id='comment-editor' name='comment-editor' src='' width='100%'/>
+                </b:if>
+                <data:post.cmtfpIframe/>
+                <script>BLOG_CMT_createIframe(&#39;<data:post.appRpcRelayPath/>&#39;);</script>
+            </div>
+        </b:includable>
+        <b:includable id='threaded_comment_js' var='post'>
+            <script async='async' expr:src='data:post.commentSrc'/>
+            <script>(function(){var items=<data:post.commentJso/>;var msgs=<data:post.commentMsgs/>;var config=<data:post.commentConfig/>;/*<![CDATA[*/var cursor=null;if(items&&items.length>0){cursor=parseInt(items[items.length-1].timestamp)+1;}var bodyFromEntry=function(entry){var text=(entry&&((entry.content&&entry.content.$t)||(entry.summary&&entry.summary.$t)))||'';if(entry && entry.gd$extendedProperty){for(var k in entry.gd$extendedProperty){if(entry.gd$extendedProperty[k].name=='blogger.contentRemoved'){return'<span class="deleted-comment">'+text+'</span>';}}}return text;}var parse=function(data){cursor=null;var comments=[];if(data&&data.feed&&data.feed.entry){for(var i=0,entry;entry=data.feed.entry[i];i++){var comment={};var id=/blog-(\d+).post-(\d+)/.exec(entry.id.$t);comment.id=id?id[2]:null;comment.body=bodyFromEntry(entry);comment.timestamp=Date.parse(entry.published.$t)+'';if(entry.author&&entry.author.constructor===Array){var auth=entry.author[0];if(auth){comment.author={name:(auth.name?auth.name.$t:undefined),profileUrl:(auth.uri?auth.uri.$t:undefined),avatarUrl:(auth.gd$image?auth.gd$image.src:undefined)};}}if(entry.link){if(entry.link[2]){comment.link=comment.permalink=entry.link[2].href;}if(entry.link[3]){var pid=/.*comments\/default\/(\d+)\?.*/.exec(entry.link[3].href);if(pid&&pid[1]){comment.parentId=pid[1];}}}comment.deleteclass='item-control blog-admin';if(entry.gd$extendedProperty){for(var k in entry.gd$extendedProperty){if(entry.gd$extendedProperty[k].name=='blogger.itemClass'){comment.deleteclass+=' '+entry.gd$extendedProperty[k].value;}else if(entry.gd$extendedProperty[k].name=='blogger.displayTime'){comment.displayTime=entry.gd$extendedProperty[k].value;}}}comments.push(comment);}}return comments;};var paginator=function(callback){if(hasMore()){var url=config.feed+'?alt=json&v=2&orderby=published&reverse=false&max-results=50';if(cursor){url+='&published-min='+new Date(cursor).toISOString();}window.bloggercomments=function(data){var parsed=parse(data);cursor=parsed.length<50?null:parseInt(parsed[parsed.length-1].timestamp)+1;callback(parsed);window.bloggercomments=null;}url+='&callback=bloggercomments';var script=document.createElement('script');script.type='text/javascript';script.src=url;document.getElementsByTagName('head')[0].appendChild(script);}};var hasMore=function(){return!!cursor;};var getMeta=function(key,comment){if('iswriter'==key){var matches=!!comment.author&&comment.author.name==config.authorName&&comment.author.profileUrl==config.authorUrl;return matches?'true':'';}else if('deletelink'==key){return config.baseUri+'/delete-comment.g?blogID='+config.blogId+'&postID='+comment.id;}else if('deleteclass'==key){return comment.deleteclass;}return'';};var replybox=null;var replyUrlParts=null;var replyParent=undefined;var onReply=function(commentId,domId){if(replybox==null){replybox=document.getElementById('comment-editor');if(replybox!=null){replybox.height='250px';replybox.style.display='block';replyUrlParts=replybox.src.split('#');}}if(replybox&&(commentId!==replyParent)){replybox.src='';document.getElementById(domId).insertBefore(replybox,null);replybox.src=replyUrlParts[0]+(commentId?'&parentID='+commentId:'')+'#'+replyUrlParts[1];replyParent=commentId;}};var hash=(window.location.hash||'#').substring(1);var startThread,targetComment;if(/^comment-form_/.test(hash)){startThread=hash.substring('comment-form_'.length);}else if(/^c[0-9]+$/.test(hash)){targetComment=hash.substring(1);}var configJso={'maxDepth':config.maxThreadDepth};var provider={'id':config.postId,'data':items,'loadNext':paginator,'hasMore':hasMore,'getMeta':getMeta,'onReply':onReply,'rendered':true,'initComment':targetComment,'initReplyThread':startThread,'config':configJso,'messages':msgs};var render=function(){if(window.goog && window.goog.comments){var holder=document.getElementById('comment-holder');window.goog.comments.render(holder,provider);}};if(window.goog && window.goog.comments){render();}else{window.goog=window.goog||{};window.goog.comments=window.goog.comments||{};window.goog.comments.loadQueue=window.goog.comments.loadQueue||[];window.goog.comments.loadQueue.push(render);}})();/*]]>*/</script>
+        </b:includable>
+        <b:includable id='threaded_comments' var='post'>
+            <b:include cond='data:post.embedCommentForm' data='post' name='threaded_comment_js'/>
+            <div id='comment-holder'>
+                <data:post.commentHtml/>
+            </div>
+            <p class='comment-footer'>
+                <b:if cond='data:post.allowNewComments'>
+                    <b:include data='post' name='threaded-comment-form'/>
+                <b:else/>
+                    <data:post.noNewCommentsText/>
+                </b:if>
+            </p>
+
+            <b:if cond='data:showCmtPopup'>
+                <div id='comment-popup'>
+                    <iframe allowtransparency='true' frameborder='0' id='comment-actions' name='comment-actions' scrolling='no'/>
+                </div>
+            </b:if>
+
+            <div id='backlinks-container'>
+                <div expr:id='data:widget.instanceId + "_backlinks-container"'></div>
+            </div>
+        </b:includable>
+    </b:widget>
+</b:section>
+
+</post-page>

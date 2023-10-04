@@ -1,0 +1,41 @@
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 8px;
+    border-top: 1px solid var(--color-background-outline);
+    margin-top: 16px;
+    background-color: var(--color-background-hover);
+
+    & p {
+        padding: 8px 16px;
+    }
+
+    & a {
+        color: var(--color-on-background);
+        display: block;
+        padding: 8px 16px;
+        border-radius: 4px;
+        transition: all .25s;
+
+        @media (hover:hover) {
+            &:hover {
+                background-color: var(--color-background-outline);
+            }
+        }
+
+        &:active {
+            background-color: var(--color-background-outline);
+
+            > * {
+                scale: .85;
+            }
+        }
+    }
+
+    & div {
+        transition: all .25s;
+    }
+}

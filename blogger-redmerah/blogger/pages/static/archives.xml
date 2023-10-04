@@ -1,0 +1,45 @@
+<archives-page>
+
+<b:section id='_archives'>
+    <b:widget id='BlogArchive1' type='BlogArchive' locked='true'>
+        <b:widget-settings>
+            <b:widget-setting name='showStyle'>HIERARCHY</b:widget-setting>
+            <b:widget-setting name='yearPattern'>yyyy</b:widget-setting>
+            <b:widget-setting name='showWeekEnd'>true</b:widget-setting>
+            <b:widget-setting name='monthPattern'>MMMM</b:widget-setting>
+            <b:widget-setting name='dayPattern'>MMM dd</b:widget-setting>
+            <b:widget-setting name='weekPattern'>MM/dd</b:widget-setting>
+            <b:widget-setting name='chronological'>false</b:widget-setting>
+            <b:widget-setting name='showPosts'>true</b:widget-setting>
+            <b:widget-setting name='frequency'>MONTHLY</b:widget-setting>
+        </b:widget-settings>
+        <b:includable id='main'>
+            <h1>Arsip artikel</h1>
+            <main>
+                <b:loop values='data:data' var='year'>
+                    <details class='ap-year'>
+                        <summary><data:year.name/><span class="icon" translate="no">expand_more</span></summary>
+                        <b:if cond='data:year.data'>
+                            <div>
+                                <b:loop values='data:year.data' var='month'>
+                                    <details class='ap-month'>
+                                        <summary><data:month.name/><span class="icon" translate="no">expand_more</span></summary>
+                                        <b:if cond='data:month.posts'>
+                                            <div>
+                                                <b:loop values='data:month.posts' var='post'>
+                                                    <a expr:href='data:post.url'><data:post.title/></a>
+                                                </b:loop>
+                                            </div>
+                                        </b:if>
+                                    </details>
+                                </b:loop>
+                            </div>
+                        </b:if>
+                    </details>
+                </b:loop>
+            </main>
+        </b:includable>
+    </b:widget>
+</b:section>
+
+</archives-page>

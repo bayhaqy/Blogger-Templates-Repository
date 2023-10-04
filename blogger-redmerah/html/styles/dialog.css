@@ -1,0 +1,73 @@
+dialog {
+    border-radius: 16px;
+    overflow: hidden;
+    background-color: rgb(var(--color-background-rgb) / .95);
+    border: 1px solid var(--color-background-outline);
+    box-shadow: 0 8px 16px var(--color-shadow);
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    outline: none;
+
+    &::backdrop {
+        background-color: rgb(0 0 0 / .5);
+    }
+
+    > div {
+        overflow: auto;
+        max-height: calc(100dvh - 32px);
+
+        > h2 {
+            font-weight: normal;
+            padding: 32px;
+        }
+
+        > div:not(.dialog-actions) {
+            max-height: calc(100dvh - 248px);
+            overflow: auto;
+            padding: 2px 32px;
+        }
+    }
+}
+
+.dialog-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 4px;
+    padding: 32px;
+
+    & :is(button, a) {
+        color: var(--color-on-background);
+        padding: 12px 16px;
+        font-size: 12px;
+        min-width: 100px;
+        font-weight: bold;
+        border-radius: 4px;
+        transition: all .25s;
+        background-color: var(--color-background-hover);
+        border: 1px solid var(--color-outline);
+
+        @media (hover: hover) {
+            &:hover {
+                background-color: var(--color-background-outline);
+            }
+        }
+
+        &:active {
+            background-color: var(--color-background-outline);
+
+            > * {
+                scale: .85;
+            }
+        }
+    }
+
+    & div {
+        width: 100%;
+        gap: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all .25s;
+    }
+}

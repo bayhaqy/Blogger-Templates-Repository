@@ -1,0 +1,123 @@
+h1 {
+    text-align: center;
+    font-weight: normal;
+    font-size: 40px;
+    padding: 32px 16px;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    width: 700px;
+    max-width: 100%;
+    padding: 0 8px;
+
+    & details {
+        background-color: var(--color-background-hover);
+        width: 100%;
+        border: 1px solid var(--color-background-outline);
+        border-radius: 4px;
+        transition: all .25s;
+
+        &[open] > summary {
+            border-bottom: 1px solid var(--color-background-outline);
+            border-radius: 3px 3px 0 0;
+
+            > .icon {
+                transform: rotate(180deg);
+            }
+        }
+    }
+
+    & summary {
+        display: flex;
+        list-style: none;
+        align-items: center;
+        justify-content: space-between;
+        padding: 16px;
+        border-radius: 3px;
+        transition: all .25s;
+
+        @media (hover: hover) {
+            &:hover {
+                background-color: var(--color-background-outline);
+            }
+        }
+
+        &:active {
+            background-color: var(--color-background-outline);
+            padding: 16px 24px;
+        }
+    }
+
+    & .icon {
+        transition: all .25s;
+    }
+
+    & div {
+        padding: 8px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    & a {
+        color: var(--color-on-background);
+        padding: 0 8px;
+        transition: all .25s;
+
+        @media (hover: hover) {
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+
+        &:active {
+            text-decoration: underline;
+            padding: 0 16px;
+        }
+    }
+}
+
+.ap-month {
+    background-color: var(--color-background-outline);
+
+    &[open] > summary {
+        border-bottom: 1px solid var(--color-outline);
+    }
+
+    & summary {
+        @media (hover: hover) {
+            &:hover {
+                background-color: var(--color-background);
+            }
+        }
+
+        &:active {
+            background-color: var(--color-background);
+        }
+    }
+}
+
+.ap-year[open] > summary {
+    padding: 16px 24px;
+
+    &:active {
+        padding: 16px 32px;
+    }
+}
+
+#_archives {
+    max-width: 100%;
+    width: 100%;
+
+    > div {
+        max-width: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}

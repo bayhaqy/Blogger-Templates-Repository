@@ -1,0 +1,66 @@
+#_cookies-message {
+    position: fixed;
+    width: 700px;
+    align-items: stretch;
+    backdrop-filter: blur(8px);
+    background-color: rgb(var(--color-background-rgb) / .8);
+    border: 1px solid var(--color-background-hover);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px var(--color-shadow);
+    display: flex;
+    gap: 16px;
+    justify-content: space-between;
+    max-width: calc(100% - 16px);
+    padding: 16px;
+    bottom: 8px;
+    left: 8px;
+    z-index: 6;
+    animation: coo-show .2s forwards ease-in-out;
+
+    &[data-hide] {
+        animation: coo-hide .2s forwards ease-in-out;
+    }
+
+    & button {
+        padding: 8px 20px;
+        border: 1px solid var(--color-outline);
+        border-radius: 4px;
+        transition: all .25s;
+
+        @media (hover:hover) {
+            &:hover {
+                background-color: var(--color-background-hover);
+            }
+        }
+        &:active {
+            background-color: var(--color-background-hover);
+
+            > * {
+                scale: .85;
+            }
+        }
+    }
+
+    & div {
+        font-size: 14px;
+        font-weight: bold;
+        transition: all .25s;
+    }
+}
+
+@keyframes coo-hide {
+    100% {
+        opacity: 0;
+        visibility: collapse;
+    }
+}
+
+@keyframes coo-show {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+        visibility: visible;
+    }
+}

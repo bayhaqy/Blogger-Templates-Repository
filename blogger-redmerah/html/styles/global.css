@@ -1,0 +1,140 @@
+:root {
+    --color-primary: #c00007;
+    --color-primary-hover: #ff5544;
+    --color-primary-outline: #ff8a7a;
+    --color-primary-container: #ffdad5;
+    --color-primary-container-hover: #ff8a7a;
+    --color-primary-container-outline: #ff5544;
+    --color-on-primary: #ffffff;
+    --color-on-primary-container: #410001;
+    --color-background: #ffffff;
+    --color-background-rgb: 255 255 255;
+    --color-background-hover: #f2f2f2;
+    --color-background-outline: #c9c9c9;
+    --color-on-background: #1c1c1c;
+    --color-outline: #7a7a7a;
+    --color-shadow: #0000004d;
+
+    &.dark {
+        --color-primary: #ffb4a9;
+        --color-primary-hover: #ff5544;
+        --color-primary-outline: #e7261e;
+        --color-primary-container: #930004;
+        --color-primary-container-hover: #c00007;
+        --color-primary-container-outline: #e7261e;
+        --color-on-primary: #690002;
+        --color-on-primary-container: #ffdad5;
+        --color-background: #212121;
+        --color-background-rgb: 33 33 33;
+        --color-background-hover: #3d3d3d;
+        --color-background-outline: #545454;
+        --color-on-background: #e6e6e6;
+        --color-outline: #949494;
+        --color-shadow: #000000cc;
+
+        color-scheme: dark;
+        & * {
+            color-scheme: dark;
+        }
+    }
+
+    &.system {
+        @media (prefers-color-scheme: dark) {
+            --color-primary: #ffb4a9;
+            --color-primary-hover: #ff5544;
+            --color-primary-outline: #e7261e;
+            --color-primary-container: #930004;
+            --color-primary-container-hover: #c00007;
+            --color-primary-container-outline: #e7261e;
+            --color-on-primary: #690002;
+            --color-on-primary-container: #ffdad5;
+            --color-background: #212121;
+            --color-background-rgb: 33 33 33;
+            --color-background-hover: #3d3d3d;
+            --color-background-outline: #545454;
+            --color-on-background: #e6e6e6;
+            --color-outline: #949494;
+            --color-shadow: #000000cc;
+
+            color-scheme: dark;
+            & * {
+                color-scheme: dark;
+            }
+
+        }
+    }
+}
+
+* {
+    background-color: transparent;
+    box-sizing: border-box;
+    font-family: 'Rubik', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+code, code * {
+    font-family: 'DM Mono', monospace;
+}
+
+html {
+    background-color: var(--color-background);
+}
+
+input, button, textarea {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    display: block;
+}
+
+:is(button, summary):hover {
+    cursor: pointer;
+}
+
+img {
+    display: block;
+}
+
+button, summary, .icon, :is(button, summary, .icon) * {
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+input, textarea, button, select, a, summary, .icon, :is(input, textarea, button, select, a, summary, .icon) * {
+    -webkit-tap-highlight-color: transparent;
+}
+
+.page {
+    display: flex;
+    justify-content: center;
+    min-height: calc(100dvh - 146px);
+    width: 100%;
+}
+
+.page-container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    width: 1440px;
+}
+
+.icon {
+    display: block;
+    font-family: 'Material Symbols Rounded';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -webkit-font-smoothing: antialiased;
+}

@@ -1,0 +1,37 @@
+#_tooltip {
+    word-break: break-all;
+    position: fixed;
+    color: var(--color-on-background);
+    background-color: var(--color-background-hover);
+    box-shadow: 0 2px 4px var(--color-shadow);
+    padding: 8px;
+    border-radius: 4px;
+    font-size: 14px;
+    z-index: 5;
+    transition: all .25s;
+    animation: too-show .2s forwards ease-in-out;
+
+    &:not([data-open]) {
+        animation: too-hide .2s forwards ease-in-out;
+    }
+}
+
+@keyframes too-hide {
+    100% {
+        opacity: 0;
+        visibility: collapse;
+        transform: translateY(8px);
+    }
+}
+
+@keyframes too-show {
+    0% {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+        visibility: visible;
+    }
+}

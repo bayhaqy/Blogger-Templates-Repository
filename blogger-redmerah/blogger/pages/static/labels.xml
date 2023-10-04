@@ -1,0 +1,23 @@
+<labels-page>
+
+<b:section id='_labels'>
+    <b:widget id='Label1' type='Label' locked='true'>
+        <b:widget-settings>
+            <b:widget-setting name='sorting'>ALPHA</b:widget-setting>
+            <b:widget-setting name='display'>LIST</b:widget-setting>
+            <b:widget-setting name='selectedLabelsList'/>
+            <b:widget-setting name='showType'>ALL</b:widget-setting>
+            <b:widget-setting name='showFreqNumbers'>true</b:widget-setting>
+        </b:widget-settings>
+        <b:includable id='main'>
+            <h1>Label</h1>
+            <div class='lp-list'>
+                <b:loop values='data:labels' var='label'>
+                    <a expr:href='data:label.url'><div><p><data:label.count/></p><data:label.name/></div></a>
+                </b:loop>
+            </div>
+        </b:includable>
+    </b:widget>
+</b:section>
+
+</labels-page>

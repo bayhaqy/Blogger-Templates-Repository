@@ -1,0 +1,65 @@
+h1 {
+    text-align: center;
+    font-weight: normal;
+    font-size: 40px;
+    padding: 32px 16px;
+}
+
+.lp-list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    & a {
+        display: block;
+        color: var(--color-on-background);
+        padding: 8px 16px 8px 10px;
+        font-family: 'DM Mono', monospace;
+        border-radius: 4px;
+        border: 1px solid var(--color-outline);
+        transition: all .25s;
+
+        @media (hover: hover) {
+            &:hover {
+                background-color: var(--color-background-hover);
+            }
+        }
+
+        &:active {
+            background-color: var(--color-background-hover);
+
+            > * {
+                scale: .85;
+            }
+        }
+    }
+
+    & div {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        transition: all .25s;
+    }
+
+    & p {
+        &::before {
+            content: '[ ';
+        }
+        &::after {
+            content: ' ]';
+        }
+    }
+}
+
+#_labels {
+    width: 100%;
+    max-width: 100%;
+
+    > div {
+        width: 100%;
+        max-width: 100%;
+        padding: 0 16px;
+    }
+}

@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- Meta begin -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Meta end -->
+
+    <!-- Links begin -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,300,0,0" />
+    <!-- Links end -->
+
+    <title>Sulais Blog</title>
+
+    <!-- CSS styles begin -->
+    <link rel="stylesheet" href="../styles/global.css">
+    <link rel="stylesheet" href="../styles/cookies.css">
+    <link rel="stylesheet" href="../styles/menu.css">
+    <link rel="stylesheet" href="../styles/topbar.css">
+    <link rel="stylesheet" href="../styles/footer.css">
+    <link rel="stylesheet" href="../styles/fab.css">
+    <link rel="stylesheet" href="../styles/dialog.css">
+    <link rel="stylesheet" href="../styles/tooltip.css">
+    <link rel="stylesheet" href="../styles/post-page.css">
+    <!-- CSS styles end -->
+
+</head>
+<body>
+
+    <!-- Topbar begin -->
+    <div id="_top-bar">
+        <div>
+            <div class="section" id="_tb-search">
+                <div class="widget BlogSearch" id="BlogSearch1">
+                    <div id='data:widget.instanceId + "_form"' class="tb-search">
+                        <form method="post" action="search.html">
+                            <button type="button" id="_tb-close-btn" title="Batal"><span class="icon" translate="no">close</span></button>
+                            <input autocomplete='off' type="text" name="q" placeholder="Telusuri artikel ...">
+                            <button type="submit" title="Telusuri"><span class="icon" translate="no">search</span></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="tb-logo"><a href="home.html"><div>
+                <svg width="32" height="32" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="149.196" y="190.57" width="76.8987" height="221.297" rx="12" fill="#F34040"/><rect x="391" y="100" width="76.8988" height="270" rx="12" transform="rotate(90 391 100)" fill="#D01717"/><path d="M314.101 100H379C385.627 100 391 105.373 391 112V264.867C391 271.495 385.627 276.867 379 276.867H326.101C319.474 276.867 314.101 271.495 314.101 264.867V100Z" fill="#F34040"/><rect x="390.607" y="394.345" width="24.2241" height="179.43" rx="4" transform="rotate(135 390.607 394.345)" fill="#D01717"/></svg>
+                RedMerah
+            </div></a></div>
+            <nav class="tb-navigation">
+                <a href="static/labels.html"><div>Label</div></a>
+                <a href="static/archives.html"><div>Arsip</div></a>
+                <a href="post.html"><div>Tentang</div></a>
+                <a href="static/contact.html"><div>Hubungi</div></a>
+            </nav>
+            <div class="tb-actions">
+                <button id="_tb-theme-btn" title="Tema"><span class="icon" translate="no">brightness_4</span></button>
+                <button id="_tb-search-btn" title="Telusuri"><span class="icon" translate="no">search</span></button>
+                <button id="_tb-menu-btn" title="Menu"><span class="icon" translate="no">menu</span></button>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar end -->
+
+    <!-- Page begin -->
+    <div class="page">
+        <div class="page-container">
+            <div class="section" id="_post">
+                <div class="widget Blog" id="Blog2">
+                    <article itemscope itemtype="https://schema.org/BlogPosting">
+                        <meta content="https://loremflickr.com/640/480/nature" itemprop="thumbnailUrl">
+                        <meta content="https://loremflickr.com/640/480/nature" itemprop="image">
+                        <meta content="Perbedaan List, Tuple, dan Set pada Python" itemprop="name">
+                        <meta content="post.html" itemprop="url">
+
+                        <!-- Header begin -->
+                        <header>
+                            <code><time itemprop='datePublished' datetime="2022-2-2">20 Agustus 2023</time></code>
+                            <h1 itemprop="headline">Perbedaan List, Tuple, dan Set pada Python</h1>
+                            <div class="pp-actions">
+                                <a href="#" itemprop="author" itemscope itemtype="https://schema.org/Person" rel='author'><div>
+                                    <meta itemprop="url" content="#">
+
+                                    <img itemprop="image" src="https://loremflickr.com/640/480/nature" alt="">
+                                    <span itemprop="name">Duis Occaecat</span>
+                                </div></a>
+                                <button id="_pp-a-toc-btn" title="Daftar isi">
+                                    <span class="icon" translate="no">format_list_bulleted</span>
+                                </button>
+                                <button id="_pp-a-share-btn" title="Bagikan">
+                                    <span class="icon" translate="no">share</span>
+                                </button>
+                                <button id="_pp-a-comments-btn" title="Komentar">
+                                    <span class="icon" translate="no">chat</span>
+                                </button>
+                            </div>
+                        </header>
+                        <!-- Header end -->
+
+                        <!-- Body begin -->
+                        <main>
+                            <div class="pp-content-ads-wrapper">
+                                <div class="pp-content-wrapper">
+
+                                    <!-- Content begin -->
+                                    <div class="pp-content" itemprop="articleBody">
+                                        <p>Pada bahasa Python, terdapat tiga jenis struktur data yaitu <code>List</code>, <code>Tuple</code>, dan <code>Set</code>. Meskipun memiliki tujuan yang sama, yaitu menyimpan banyak data dalam satu variabel, ketiga jenis ini memiliki perbedaan dalam cara penggunaan dan fungsionalitasnya.</p>
+                                        <p><img src="https://loremflickr.com/640/480/nature" alt=""></p>
+                                        <p><figure>
+                                            <img src="https://loremflickr.com/640/480/nature" alt="">
+                                            <figcaption>Duis nisi sit Lorem laboris.</figcaption>
+                                        </figure></p>
+                                        <p>Sebelum membahas perbedaannya, mari kita jelaskan secara singkat apa itu <code>List</code>, <code>Tuple</code>, dan <code>Set</code>. Jika Anda ingin langsung melihat tabel perbedaannya, silakan klik <a href="#perbedaan-list-tuple-dan-set">di sini</a>.</p>
+                                        <h2 id="penjelasan-singkat-list-tuple-dan-set">Penjelasan Singkat <code>List</code>, <code>Tuple</code>, dan <code>Set</code></h2>
+                                        <p><code>List</code>, <code>Tuple</code>, dan <code>Set</code> merupakan jenis tipe data iterable dalam Python yang digunakan untuk menyimpan kumpulan data secara simultan. Masing-masing dapat menyimpan berbagai jenis data, termasuk nested array. Data-data tersebut dipisahkan oleh koma.</p>
+                                        <p>Terdapat perbedaan dalam cara penulisan ketiga jenis struktur data ini:</p>
+                                        <blockquote>
+                                            <p>Veniam irure culpa cupidatat nulla id fugiat sint consectetur nulla ea pariatur exercitation.</p>
+                                            <blockquote>
+                                                <p>Excepteur nulla tempor officia aute ad do incididunt ea et anim ad.</p>
+                                                <p>Sit Lorem duis reprehenderit sunt est.</p>
+                                                <p>Nulla magna exercitation aliqua nisi nulla laborum sunt irure aute cillum amet consequat.</p>
+                                            </blockquote>
+                                        </blockquote>
+                                        <ul>
+                                            <li><code>List</code> ditandai dengan tanda kurung siku <code>[ ]</code>.</li>
+                                            <li><code>Tuple</code> ditandai dengan tanda kurung biasa <code>( )</code>.</li>
+                                            <li><code>Set</code> ditandai dengan tanda kurung kurawal <code>{ }</code>.</li>
+                                        </ul>
+                                        <p>Berikut adalah contoh penulisan ketiga jenis struktur data tersebut:</p>
+                                        <pre><code class="language-python" data-filename="main.py"># Contoh `List`
+myList = [1, &#39;a&#39;, True, [3, 4]]
+
+# Contoh `Tuple`
+myTuple = (1, &#39;a&#39;, True, [3, 4])
+
+# Contoh `Set`
+mySet = {1, &#39;a&#39;, True}
+</code></pre>
+                                        <h2 id="perbedaan-list-tuple-dan-set">Perbedaan <code>List</code>, <code>Tuple</code>, dan <code>Set</code></h2>
+                                        <p>Tabel berikut memperlihatkan perbedaan antara <code>List</code>, <code>Tuple</code>, dan <code>Set</code>:</p>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <th>Fitur</th>
+                                                    <th><code>List</code></th>
+                                                    <th><code>Tuple</code></th>
+                                                    <th><code>Set</code></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>Terurut</td>
+                                                    <td>✓</td>
+                                                    <td>✓</td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Tidak dapat diubah (immutable)</td>
+                                                    <td></td>
+                                                    <td>✓</td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Data yang dapat disimpan</td>
+                                                    <td>Semua</td>
+                                                    <td>Semua</td>
+                                                    <td>Hanya data yang dapat di-hash</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Dapat menyimpan data yang sama</td>
+                                                    <td>✓</td>
+                                                    <td>✓</td>
+                                                    <td></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <h3 id="perbedaan-pada-set">Perbedaan pada <code>Set</code></h3>
+                                        <h4 id="1-urutan-data-dalam-set-bersifat-acak">1. Urutan data dalam <code>Set</code> bersifat acak</h4>
+                                        <p>Urutan data dalam <code>Set</code> tidaklah penting, yang penting adalah keberadaan datanya.</p>
+                                        <p>Contoh:</p>
+                                        <pre><code class="language-python">mySet = {&#39;a&#39;, &#39;b&#39;, &#39;c&#39;}
+print(mySet)
+</code></pre>
+                                        <p>Hasil eksekusi program di atas dapat menghasilkan output berikut:</p>
+                                        <pre><code class="language-python">&gt; py main.py
+{&#39;a&#39;, &#39;b&#39;, &#39;c&#39;}
+
+&gt; py main.py
+{&#39;b&#39;, &#39;a&#39;, &#39;c&#39;}
+
+&gt; py main.py
+{&#39;c&#39;, &#39;b&#39;, &#39;a&#39;}
+</code></pre>
+                                        <p>Karena sifat acak ini, <code>Set</code> tidak dapat diakses menggunakan operator <code>[]</code>.</p>
+                                        <p>Contoh:</p>
+                                        <pre><code class="language-python">myList = [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;]
+data_pertama_list = myList[0]  # ok: urutan pertama adalah &#39;a&#39;
+
+mySet = {&#39;a&#39;, &#39;b&#39;, &#39;c&#39;}
+data_pertama_set = mySet[0]  # error: urutan dalam `Set` bersifat acak
+</code></pre>
+                                        <h4 id="2-set-tidak-menyimpan-data-yang-sama">2. <code>Set</code> tidak menyimpan data yang sama</h4>
+                                        <p><code>Set</code> mirip dengan himpunan, sehingga jika terdapat data yang sama, hanya satu data tersebut yang akan disimpan.</p>
+                                        <p>Contoh:</p>
+                                        <pre><code class="language-python">mySet = {1, 2, 3, 1, 1, 1}
+print(mySet)
+
+# Output: {1, 2, 3}
+</code></pre>
+                                        <h4 id="3-set-hanya-dapat-menyimpan-data-yang-dapat-di-hash">3. <code>Set</code> hanya dapat menyimpan data yang dapat di-hash</h4>
+                                        <p><code>Set</code> hanya dapat menyimpan data yang dapat di-hash, seperti string, integer, dan sejenisnya. Data yang tidak dapat di-hash, seperti iterable (<code>List</code>/<code>Tuple</code>/<code>Set</code>), tidak dapat dimasukkan ke dalam <code>Set</code>.</p>
+                                        <p>Contoh:</p>
+                                        <pre><code class="language-python">mySet = {1, 2, 3}
+# Ok: `1`, `2`, `3` dapat di-hash
+
+mySet2 = {1, 2, [1, 2, 3]}
+# Error: `[1, 2, 3]` tidak dapat di-hash
+</code></pre>
+                                        <p>Untuk mengetahui apakah suatu data dapat di-hash atau tidak, Anda dapat menggunakan fungsi bawaan <code>hash()</code>.</p>
+                                        <p>Contoh:</p>
+                                        <pre><code class="language-python">hash_value_int = hash(1)
+# Ok: `1` dapat di-hash
+
+hash_value_list = hash([1, 2, 3])
+# Error: `[1, 2, 3]` tidak dapat di-hash
+</code></pre>
+                                        <h3 id="perbedaan-pada-tuple">Perbedaan pada <code>Tuple</code></h3>
+                                        <h4 id="1-tuple-bersifat-tidak-dapat-diubah-immutableread-only">1. <code>Tuple</code> bersifat tidak dapat diubah (immutable/read-only)</h4>
+                                        <p><code>Tuple</code> memiliki sifat tetap dan tidak dapat diubah atau dihapus. Jika suatu data terdapat dalam <code>Tuple</code>, maka data tersebut akan tetap ada dan tidak dapat diubah. Bahkan urutan data dalam <code>Tuple</code> tidak dapat diubah.</p>
+                                        <p>Contoh:</p>
+                                        <pre><code class="language-python">myTuple = (1, 2, 3)
+print(myTuple[0])  # ok: membaca data tanpa mengubahnya
+
+myTuple[0] = 3  # error: `Tuple` tidak dapat mengubah data di dalamnya
+</code></pre>
+                                        <h3 id="perbedaan-pada-list">Perbedaan pada <code>List</code></h3>
+                                        <p><code>List</code> memiliki fungsionalitas yang lebih luas dibandingkan <code>Set</code> dan <code>Tuple</code>. <code>List</code> dapat melakukan semua yang tidak dapat dilakukan oleh <code>Set</code> dan <code>Tuple</code>. Dengan demikian, <code>List</code> tidak memiliki perbedaan khusus seperti <code>Set</code> dan <code>Tuple</code>.</p>
+                                        <h2 id="kesimpulan">Kesimpulan</h2>
+                                        <ul>
+                                            <li><p><code>List</code> adalah struktur data terurut yang dapat melakukan semua yang tidak dapat dilakukan oleh <code>Set</code> dan <code>Tuple</code>.</p></li>
+                                            <li><p><code>Tuple</code> adalah struktur data terurut yang bersifat tetap (immutable/read-only), sehingga data dalam <code>Tuple</code> tidak dapat diubah.</p></li>
+                                            <li><p><code>Set</code> adalah struktur data tidak terurut yang tidak peduli dengan adanya data yang sama. Data dalam <code>Set</code> haruslah data yang dapat di-hash.</p></li>
+                                        </ul>
+
+                                    </div>
+                                    <!-- Content end -->
+
+                                    <!-- Labels begin -->
+                                    <div class="pp-labels">
+                                        <a href="search-label.html"><div itemprop="keywords">Array</div></a>
+                                        <a href="search-label.html"><div itemprop="keywords">Iterable</div></a>
+                                        <a href="search-label.html"><div itemprop="keywords">Python</div></a>
+                                        <a href="search-label.html"><div itemprop="keywords">Programming language</div></a>
+                                    </div>
+                                    <!-- Labels end -->
+
+                                    <!-- Actions begin -->
+                                    <div class="pp-actions-inside">
+                                        <button id="_pp-ai-comments-btn" title="Komentar">
+                                            <div><span class="icon" translate="no">chat</span> Komentar</div>
+                                        </button>
+                                        <button id="_pp-ai-share-btn" title="Bagikan">
+                                            <div><span class="icon" translate="no">share</span> Bagikan</div>
+                                        </button>
+                                    </div>
+                                    <!-- Actions end -->
+
+                                </div>
+
+                                <div class="pp-ads-wrapper">
+                                    <!-- Place ads here -->
+                                    <div><div style="width: 800px;height: 200px;border-radius: 8px;background-color: blue;"></div></div>
+                                    <!--
+                                    <div><div style="width: 500px;height: 300px;border-radius: 8px;background-color: green;"></div></div>
+                                    <div><div style="width: 400px;height: 200px;border-radius: 8px;background-color: cyan;"></div></div>
+                                    <div><div style="width: 500px;height: 500px;border-radius: 8px;background-color: yellowgreen;"></div></div>
+                                    <div><div style="width: 500px;height: 500px;border-radius: 8px;background-color: yellowgreen;"></div></div>
+                                    -->
+                                </div>
+
+                            </div>
+
+                            <!-- More begin -->
+                            <div class="pp-more-articles">
+                                <h2>Lainnya</h2>
+                                <div class="pp-ma-articles" itemscope itemtype="https://schema.org/Blog">
+                                    <meta content="Artikel lainnya" itemprop="name">
+                                    <meta content="Artikel-artikel lainnya yang terbaru dari RedMerah" itemprop="description">
+
+                                    <a href="post.html" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+                                        <meta content="https://loremflickr.com/640/480/nature" itemprop="thumbnailUrl">
+                                        <meta content="post.html" itemprop="url">
+
+                                        <img itemprop="image" src="https://loremflickr.com/640/480/nature" alt="">
+                                        <code><time itemprop='datePublished' datetime="2023-12-02">2 Desember 2023</time></code>
+                                        <h2 itemprop="headline">Qui exercitation reprehenderit amet eu deserunt amet sint excepteur enim ex</h2>
+                                        <div><code itemprop="keywords">Mollit</code></div>
+                                    </a>
+                                    <a href="post.html" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+                                        <meta content="https://loremflickr.com/640/480/nature" itemprop="thumbnailUrl">
+                                        <meta content="post.html" itemprop="url">
+
+                                        <img itemprop="image" src="https://loremflickr.com/640/480/nature" alt="">
+                                        <code><time itemprop='datePublished' datetime="2023-12-02">2 Desember 2023</time></code>
+                                        <h2 itemprop="headline">Qui exercitation reprehenderit amet eu deserunt amet sint excepteur enim ex</h2>
+                                        <div><code itemprop="keywords">Mollit</code></div>
+                                    </a>
+                                    <a href="post.html" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+                                        <meta content="https://loremflickr.com/640/480/nature" itemprop="thumbnailUrl">
+                                        <meta content="post.html" itemprop="url">
+
+                                        <img itemprop="image" src="https://loremflickr.com/640/480/nature" alt="">
+                                        <code><time itemprop='datePublished' datetime="2023-12-02">2 Desember 2023</time></code>
+                                        <h2 itemprop="headline">Commodo irure ea occaecat consectetur</h2>
+                                        <div><code itemprop="keywords">Eu</code><code itemprop="keywords">Laboris</code><code itemprop="keywords">Quis</code><code itemprop="keywords">Qoluptate</code></div>
+                                    </a>
+                                    <a href="post.html" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+                                        <meta content="https://loremflickr.com/640/480/nature" itemprop="thumbnailUrl">
+                                        <meta content="post.html" itemprop="url">
+
+                                        <img itemprop="image" src="https://loremflickr.com/640/480/nature" alt="">
+                                        <code><time itemprop='datePublished' datetime="2023-12-02">2 Desember 2023</time></code>
+                                        <h2 itemprop="headline">Lorem ipsum dolor sit amet</h2>
+                                        <div><code itemprop="keywords">Python</code><code itemprop="keywords">Programming</code><code itemprop="keywords">language</code></div>
+                                    </a>
+                                    <a href="post.html" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+                                        <meta content="https://loremflickr.com/640/480/nature" itemprop="thumbnailUrl">
+                                        <meta content="post.html" itemprop="url">
+
+                                        <img itemprop="image" src="https://loremflickr.com/640/480/nature" alt="">
+                                        <code><time itemprop='datePublished' datetime="2023-12-02">2 Desember 2023</time></code>
+                                        <h2 itemprop="headline">Cupidatat ullamco Lorem ut fugiat proident ipsum cupidatat ad dolore reprehenderit aliquip dolore amet.</h2>
+                                        <div><code itemprop="keywords">Python</code><code itemprop="keywords">Programming</code><code itemprop="keywords">language</code></div>
+                                    </a>
+                                    <a href="post.html" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+                                        <meta content="https://loremflickr.com/640/480/nature" itemprop="thumbnailUrl">
+                                        <meta content="post.html" itemprop="url">
+
+                                        <img itemprop="image" src="https://loremflickr.com/640/480/nature" alt="">
+                                        <code><time itemprop='datePublished' datetime="2023-12-02">2 Desember 2023</time></code>
+                                        <h2 itemprop="headline">Lorem ipsum dolor sit amet</h2>
+                                        <div><code itemprop="keywords">Python</code><code itemprop="keywords">Programming</code><code itemprop="keywords">language</code></div>
+                                    </a>
+                                </div>
+                            </div>
+                            <!-- More end -->
+
+                            <!-- Comments dialog begin -->
+                            <dialog id="_pp-comments-dialog">
+                                <div>
+                                    <h2>Komentar</h2>
+                                    <div class="pp-cd-body">
+                                        <div id="comment-holder"><div class="comment-thread toplevel-thread"><ol id="top-ra"><li class="comment" id="c7950142307702550697"><div class="avatar-image-container"><img src="//2.bp.blogspot.com/-fVk0lbHhZGY/ZJT-ZPRPPKI/AAAAAAAAHp4/mfpMeiiqqx4ApJ6WS-fC6SnS2IQUlqoVQCK4BGAYYCw/s35/muhammad_sulais.jpg" alt=""></div><div class="comment-block"><div class="comment-header"><cite class="user"><a href="https://www.blogger.com/profile/09025899031904984692" rel="nofollow">Muhammad Sulais</a></cite><span class="icon user blog-author"></span><span class="datetime secondary-text"><a rel="nofollow" href="https://www.redmerah.com/2023/06/perbedaan-list-tuple-dan-set-pada-python.html?showComment=1691154310130#c7950142307702550697">04 Agustus, 2023 06:05</a></span></div><p class="comment-content">Test</p><span class="comment-actions secondary-text"><a class="comment-reply" target="_self" data-comment-id="7950142307702550697" href="javascript:;">Balas</a><span class="item-control blog-admin blog-admin pid-1600102156"><a target="_self" href="https://www.blogger.com/delete-comment.g?blogID=6094629776295634638&amp;postID=7950142307702550697">Hapus</a></span></span></div><div class="comment-replies"><div id="c7950142307702550697-rt" class="comment-thread inline-thread"><span class="thread-toggle thread-expanded"><span class="thread-arrow"></span><span class="thread-count"><a target="_self" href="javascript:;">Balasan</a></span></span><ol id="c7950142307702550697-ra" class="thread-chrome thread-expanded"><div><li class="comment" id="c6515276831732898522"><div class="avatar-image-container"><img src="//2.bp.blogspot.com/-fVk0lbHhZGY/ZJT-ZPRPPKI/AAAAAAAAHp4/mfpMeiiqqx4ApJ6WS-fC6SnS2IQUlqoVQCK4BGAYYCw/s35/muhammad_sulais.jpg" alt=""></div><div class="comment-block"><div class="comment-header"><cite class="user"><a href="https://www.blogger.com/profile/09025899031904984692" rel="nofollow">Muhammad Sulais</a></cite><span class="icon user blog-author"></span><span class="datetime secondary-text"><a rel="nofollow" href="https://www.redmerah.com/2023/06/perbedaan-list-tuple-dan-set-pada-python.html?showComment=1691154340033#c6515276831732898522">04 Agustus, 2023 06:05</a></span></div><p class="comment-content">Komentar ini telah dihapus oleh pengarang.</p><span class="comment-actions secondary-text"><span class="item-control blog-admin blog-admin pid-1600102156"><a target="_self" href="https://www.blogger.com/delete-comment.g?blogID=6094629776295634638&amp;postID=6515276831732898522">Hapus</a></span></span></div><div class="comment-replies"><div id="c6515276831732898522-rt" class="comment-thread inline-thread hidden"><span class="thread-toggle thread-expanded"><span class="thread-arrow"></span><span class="thread-count"><a target="_self" href="javascript:;">Balasan</a></span></span><ol id="c6515276831732898522-ra" class="thread-chrome thread-expanded"><div></div><div id="c6515276831732898522-continue" class="continue"><a class="comment-reply" target="_self" data-comment-id="6515276831732898522" href="javascript:;">Balas</a></div></ol></div></div><div class="comment-replybox-single" id="c6515276831732898522-ce"></div></li><li class="comment" id="c3116981276481156562"><div class="avatar-image-container"><img src="//2.bp.blogspot.com/-fVk0lbHhZGY/ZJT-ZPRPPKI/AAAAAAAAHp4/mfpMeiiqqx4ApJ6WS-fC6SnS2IQUlqoVQCK4BGAYYCw/s35/muhammad_sulais.jpg" alt=""></div><div class="comment-block"><div class="comment-header"><cite class="user"><a href="https://www.blogger.com/profile/09025899031904984692" rel="nofollow">Muhammad Sulais</a></cite><span class="icon user blog-author"></span><span class="datetime secondary-text"><a rel="nofollow" href="https://www.redmerah.com/2023/06/perbedaan-list-tuple-dan-set-pada-python.html?showComment=1691423623265#c3116981276481156562">07 Agustus, 2023 08:53</a></span></div><p class="comment-content">Test 1.2</p><span class="comment-actions secondary-text"><span class="item-control blog-admin blog-admin pid-1600102156"><a target="_self" href="https://www.blogger.com/delete-comment.g?blogID=6094629776295634638&amp;postID=3116981276481156562">Hapus</a></span></span></div><div class="comment-replies"><div id="c3116981276481156562-rt" class="comment-thread inline-thread hidden"><span class="thread-toggle thread-expanded"><span class="thread-arrow"></span><span class="thread-count"><a target="_self" href="javascript:;">Balasan</a></span></span><ol id="c3116981276481156562-ra" class="thread-chrome thread-expanded"><div></div><div id="c3116981276481156562-continue" class="continue"><a class="comment-reply" target="_self" data-comment-id="3116981276481156562" href="javascript:;">Balas</a></div></ol></div></div><div class="comment-replybox-single" id="c3116981276481156562-ce"></div></li></div><div id="c7950142307702550697-continue" class="continue"><a class="comment-reply" target="_self" data-comment-id="7950142307702550697" href="javascript:;">Balas</a></div></ol></div></div><div class="comment-replybox-single" id="c7950142307702550697-ce"></div></li><li class="comment" id="c4295344175829433146"><div class="avatar-image-container"><img src="//2.bp.blogspot.com/-fVk0lbHhZGY/ZJT-ZPRPPKI/AAAAAAAAHp4/mfpMeiiqqx4ApJ6WS-fC6SnS2IQUlqoVQCK4BGAYYCw/s35/muhammad_sulais.jpg" alt=""></div><div class="comment-block"><div class="comment-header"><cite class="user"><a href="https://www.blogger.com/profile/09025899031904984692" rel="nofollow">Muhammad Sulais</a></cite><span class="icon user blog-author"></span><span class="datetime secondary-text"><a rel="nofollow" href="https://www.redmerah.com/2023/06/perbedaan-list-tuple-dan-set-pada-python.html?showComment=1691154326832#c4295344175829433146">04 Agustus, 2023 06:05</a></span></div><p class="comment-content">Test 2.0</p><span class="comment-actions secondary-text"><a class="comment-reply" target="_self" data-comment-id="4295344175829433146" href="javascript:;">Balas</a><span class="item-control blog-admin blog-admin pid-1600102156"><a target="_self" href="https://www.blogger.com/delete-comment.g?blogID=6094629776295634638&amp;postID=4295344175829433146">Hapus</a></span></span></div><div class="comment-replies"><div id="c4295344175829433146-rt" class="comment-thread inline-thread hidden"><span class="thread-toggle thread-expanded"><span class="thread-arrow"></span><span class="thread-count"><a target="_self" href="javascript:;">Balasan</a></span></span><ol id="c4295344175829433146-ra" class="thread-chrome thread-expanded"><div></div><div id="c4295344175829433146-continue" class="continue"><a class="comment-reply" target="_self" data-comment-id="4295344175829433146" href="javascript:;">Balas</a></div></ol></div></div><div class="comment-replybox-single" id="c4295344175829433146-ce"></div></li></ol><div id="top-continue" class="continue hidden"><a class="comment-reply" target="_self" href="javascript:;">Tambahkan komentar</a></div><div class="comment-replybox-thread" id="top-ce"><iframe allowtransparency="true" class="blogger-iframe-colorize blogger-comment-from-post" frameborder="0" height="230px" id="comment-editor" name="comment-editor" src="https://www.blogger.com/comment/frame/6094629776295634638?po=5714755052237557405&amp;hl=id&amp;blogspotRpcToken=1943384#%7B%22color%22:%22rgb(0,%200,%200)%22,%22backgroundColor%22:%22rgb(255,%20251,%20255)%22,%22unvisitedLinkColor%22:%22rgb(0,%200,%20238)%22,%22fontFamily%22:%22%5C%22DM%20Sans%5C%22,%20sans-serif%22%7D" width="100%" data-resized="true" style="display: block;"></iframe></div><div class="loadmore hidden" data-post-id="5714755052237557405"><a target="_self">Muat yang lain...</a></div></div></div>
+                                    </div>
+                                    <div class="dialog-actions">
+                                        <button id="_pp-cd-close-btn"><div>Tutup</div></button>
+                                    </div>
+                                </div>
+                            </dialog>
+                            <!-- Comments dialog end -->
+
+                            <!-- Table of content dialog begin -->
+                            <dialog id="_pp-toc-dialog">
+                                <div>
+                                    <h2>Daftar isi</h2>
+                                    <div class="pp-tocd-body"></div>
+                                    <div class="dialog-actions">
+                                        <button id="_pp-tocd-close-btn"><div>Tutup</div></button>
+                                    </div>
+                                </div>
+                            </dialog>
+                            <!-- Table of content dialog end -->
+
+                            <!-- Share dialog begin -->
+                            <dialog id="_pp-share-dialog">
+                                <div>
+                                    <h2>Bagikan</h2>
+                                    <div class="pp-sd-body">
+                                        <a href="#">
+                                            <div>
+                                                <svg viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg"> <g clip-path="url(#clip0_2_2)"> <path d="M7.54753 22.5011C16.6042 22.5011 21.5577 14.9977 21.5577 8.49087C21.5577 8.27769 21.5577 8.06553 21.5434 7.85337C22.507 7.15664 23.3388 6.29393 24 5.30562C23.1013 5.70384 22.148 5.965 21.1718 6.08037C22.1997 5.46502 22.9691 4.49717 23.3366 3.35694C22.37 3.93047 21.3126 4.33466 20.2099 4.55206C19.4675 3.76266 18.4856 3.23995 17.4162 3.0648C16.3467 2.88966 15.2494 3.07186 14.294 3.58319C13.3385 4.09453 12.5783 4.90651 12.1308 5.89347C11.6833 6.88043 11.5736 7.98736 11.8186 9.04297C9.86091 8.94481 7.94575 8.43606 6.19744 7.54974C4.44913 6.66341 2.90675 5.41933 1.67044 3.89825C1.04077 4.98223 0.847899 6.26545 1.13111 7.48663C1.41431 8.70782 2.1523 9.77516 3.19481 10.4713C2.41123 10.4481 1.64473 10.2367 0.96 9.85503V9.91737C0.960299 11.0542 1.35384 12.156 2.07387 13.0358C2.7939 13.9156 3.79608 14.5192 4.91044 14.7443C4.18551 14.942 3.4249 14.9709 2.68706 14.8287C3.0017 15.8072 3.61428 16.6628 4.43912 17.2759C5.26396 17.889 6.2598 18.229 7.28738 18.2483C5.54376 19.6186 3.38982 20.3625 1.17216 20.3603C0.780385 20.3595 0.388994 20.3358 0 20.2892C2.25181 21.7343 4.87192 22.5008 7.54753 22.4972" fill="#1DA1F2"/> </g> <defs> <clipPath id="clip0_2_2"> <rect width="24" height="24" fill="white" transform="translate(0.333328 0.791668)"/> </clipPath> </defs> </svg>
+                                                Twitter
+                                            </div>
+                                        </a>
+                                        <a href="#">
+                                            <div>
+                                                <svg viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg"> <g clip-path="url(#clip0_2_4)"> <path d="M24.8835 12.0848C24.8835 5.45663 19.5116 0.0847549 12.8835 0.0847549C6.25539 0.0847549 0.883514 5.45663 0.883514 12.0848C0.883514 18.0749 5.26914 23.0394 11.0095 23.9399V15.5563H7.96492V12.0848H11.0095V9.44147C11.0095 6.43632 12.7977 4.77319 15.5399 4.77319C16.8548 4.77319 18.2291 5.00991 18.2291 5.00991V7.9621H16.717C15.2245 7.9621 14.7641 8.88929 14.7641 9.83616V12.0848H18.0913L17.5588 15.5563H14.7641V23.9399C20.4979 23.0394 24.8835 18.0749 24.8835 12.0848Z" fill="#1877F2"/> <path d="M17.5518 15.5563L18.0848 12.0848H14.7576V9.83616C14.7576 8.88929 15.2245 7.9621 16.7104 7.9621H18.2226V5.00991C18.2226 5.00991 16.8482 4.77319 15.5334 4.77319C12.7916 4.77319 11.0029 6.43679 11.0029 9.44147V12.0848H7.95836V15.5563H11.0029V23.9399C11.6146 24.0384 12.239 24.0848 12.877 24.0848C13.5149 24.0848 14.1393 24.0323 14.751 23.9399V15.5563H17.5518Z" fill="white"/> </g> <defs> <clipPath id="clip0_2_4"> <rect width="24" height="24" fill="white" transform="translate(0.883514 0.0847549)"/> </clipPath> </defs> </svg>
+                                                Facebook
+                                            </div>
+                                        </a>
+                                        <a href="#">
+                                            <div>
+                                                <svg viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg"> <g clip-path="url(#clip0_2_8)"> <path d="M12.1688 0.346826C5.54174 0.346826 0.168785 5.71929 0.168785 12.3466C0.168785 17.2603 3.12349 21.4814 7.35155 23.3374C7.31779 22.4994 7.3455 21.4936 7.56041 20.5819C7.7911 19.6077 9.10447 14.0432 9.10447 14.0432C9.10447 14.0432 8.72105 13.2771 8.72105 12.1446C8.72105 10.3664 9.75182 9.03831 11.0353 9.03831C12.1268 9.03831 12.6541 9.85813 12.6541 10.8398C12.6541 11.937 11.9543 13.5783 11.5944 15.0984C11.2938 16.3713 12.2326 17.4095 13.4884 17.4095C15.7619 17.4095 17.2932 14.4894 17.2932 11.0296C17.2932 8.39962 15.5218 6.4311 12.3001 6.4311C8.66006 6.4311 6.39238 9.14563 6.39238 12.1778C6.39238 13.2232 6.70064 13.9605 7.18344 14.5313C7.40546 14.7935 7.43632 14.8991 7.35592 15.2002C7.29838 15.4209 7.16616 15.9525 7.11146 16.1632C7.03154 16.467 6.78534 16.5757 6.51064 16.4634C4.83408 15.779 4.0532 13.943 4.0532 11.8791C4.0532 8.4703 6.92805 4.38298 12.6294 4.38298C17.2108 4.38298 20.2261 7.69823 20.2261 11.257C20.2261 15.9643 17.6091 19.481 13.7515 19.481C12.4559 19.481 11.2373 18.7807 10.8199 17.9854C10.8199 17.9854 10.1232 20.7501 9.97564 21.284C9.72129 22.2092 9.22326 23.1338 8.76789 23.8545C9.84716 24.1732 10.9872 24.3466 12.1688 24.3466C18.7953 24.3466 24.168 18.9741 24.168 12.3466C24.168 5.71929 18.7953 0.346826 12.1688 0.346826Z" fill="#CD1E25"/> </g> <defs> <clipPath id="clip0_2_8"> <rect width="23.9991" height="24" fill="white" transform="translate(0.168785 0.346649)"/> </clipPath> </defs> </svg>
+                                                Pinterest
+                                            </div>
+                                        </a>
+                                        <a href="#">
+                                            <div><span class="icon" translate="no">email</span> Email</div>
+                                        </a>
+                                        <button id="_pp-sd-copy-btn" data-url="https://redmerah.com/">
+                                            <div><span class="icon" translate="no">content_copy</span> Salin link</div>
+                                        </button>
+                                        <button id="_pp-sd-share-btn" data-url="https://redmerah.com/" data-title="Perbedaan List, Tuple, dan Set pada Python">
+                                            <div><span class="icon" translate="no">more_horiz</span> Lainnya</div>
+                                        </button>
+                                    </div>
+                                    <div class="dialog-actions">
+                                        <button id="_pp-sd-close-btn"><div>Tutup</div></button>
+                                    </div>
+                                </div>
+                            </dialog>
+                            <!-- Share dialog end -->
+
+                        </main>
+                        <!-- Body end -->
+
+                    </article>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Page end -->
+
+    <!-- Footer begin -->
+    <footer>
+        <p>© 2023 RedMerah</p>
+        <a href="home.html"><div>Beranda</div></a>
+        <a href="static/labels.html"><div>Label</div></a>
+        <a href="static/archives.html"><div>Arsip</div></a>
+        <a href="post.html"><div>Tentang</div></a>
+        <a href="static/contact.html"><div>Hubungi</div></a>
+        <a href="post.html"><div>Privasi</div></a>
+    </footer>
+    <!-- Footer end -->
+
+    <!-- Menus begin -->
+    <menu id="_theme-menu" data-position="bottom-right" data-gap="16">
+        <li><button data-theme="system" data-selected><div>
+            <div>
+                <span class="icon" translate="no">brightness_4</span>
+                System
+            </div>
+            <span class="icon" translate="no">done</span>
+        </div></button></li>
+        <li><button data-theme="light"><div>
+            <div>
+                <span class="icon" translate="no">light_mode</span>
+                Terang
+            </div>
+            <span class="icon" translate="no">done</span>
+        </div></button></li>
+        <li><button data-theme="dark"><div>
+            <div>
+                <span class="icon" translate="no">dark_mode</span>
+                Gelap
+            </div>
+            <span class="icon" translate="no">done</span>
+        </div></button></li>
+    </menu>
+    <menu id="_nav-menu" data-position="bottom-right" data-gap="16">
+        <li><a href="static/labels.html"><div>Label</div></a></li>
+        <li><a href="static/archives.html"><div>Arsip</div></a></li>
+        <li><a href="post.html"><div>Tentang</div></a></li>
+        <li><a href="static/contact.html"><div>Hubungi</div></a></li>
+    </menu>
+    <!-- Menus end -->
+
+    <!-- Floating button begin -->
+    <button id="_floating-action-btn" title="Ke atas" data-tooltip-position="top-center">
+        <span class="icon" translate="no">arrow_upward</span>
+    </button>
+    <!-- Floating button end -->
+
+    <!-- Tooltip begin -->
+    <div id="_tooltip"></div>
+    <!-- Tooltip end -->
+
+    <!-- Cookie message begin -->
+    <div id="_cookies-message" data-hide>
+        <p>
+            Situs web ini menggunakan cookie untuk meningkatkan pengalaman pengguna
+            Anda. Dengan menggunakan situs web ini, Anda menyetujui penggunaan cookie
+            kami.
+        </p>
+        <button id="_cm-ok-btn"><div>Ok</div></button>
+    </div>
+    <!-- Cookie message end -->
+
+    <!-- Scripts begin -->
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+    <script src="../scripts/post-page.js"></script>
+    <script src="../scripts/cookie.js"></script>
+    <script src="../scripts/tooltip.js"></script>
+    <script src="../scripts/image.js"></script>
+    <script src="../scripts/dialog.js"></script>
+    <script src="../scripts/menu.js"></script>
+    <script src="../scripts/topbar.js"></script>
+    <script src="../scripts/scroll.js"></script>
+    <!-- Scripts end -->
+
+</body>
+</html>

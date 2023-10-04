@@ -1,0 +1,57 @@
+<search-page>
+
+<b:section id='_search'>
+    <b:widget id='Blog4' type='Blog' locked='true'>
+        <b:widget-settings>
+            <b:widget-setting name='showDateHeader'>true</b:widget-setting>
+            <b:widget-setting name='style.textcolor'>#ffffff</b:widget-setting>
+            <b:widget-setting name='showShareButtons'>true</b:widget-setting>
+            <b:widget-setting name='showCommentLink'>true</b:widget-setting>
+            <b:widget-setting name='style.urlcolor'>#ffffff</b:widget-setting>
+            <b:widget-setting name='showAuthor'>true</b:widget-setting>
+            <b:widget-setting name='style.linkcolor'>#ffffff</b:widget-setting>
+            <b:widget-setting name='style.unittype'>TextAndImage</b:widget-setting>
+            <b:widget-setting name='style.bgcolor'>#ffffff</b:widget-setting>
+            <b:widget-setting name='reactionsLabel'/>
+            <b:widget-setting name='showAuthorProfile'>true</b:widget-setting>
+            <b:widget-setting name='style.layout'>1x1</b:widget-setting>
+            <b:widget-setting name='showLabels'>true</b:widget-setting>
+            <b:widget-setting name='showLocation'>true</b:widget-setting>
+            <b:widget-setting name='showTimestamp'>true</b:widget-setting>
+            <b:widget-setting name='postsPerAd'>1</b:widget-setting>
+            <b:widget-setting name='showBacklinks'>true</b:widget-setting>
+            <b:widget-setting name='style.bordercolor'>#ffffff</b:widget-setting>
+            <b:widget-setting name='showInlineAds'>true</b:widget-setting>
+            <b:widget-setting name='showReactions'>true</b:widget-setting>
+        </b:widget-settings>
+        <b:includable id='main'>
+
+            <!-- Header begin -->
+            <header>
+                <code>Mencari:</code>
+                <h1><q><data:blog.searchQuery/></q></h1>
+            </header>
+            <!-- Header end -->
+
+            <!-- Articles begin -->
+            <main>
+                <b:loop values='data:posts' var='post'>
+                    <a expr:href='data:post.link ?: data:post.url'>
+                        <img expr:src="resizeImage(data:post.thumbnailUrl, 500)" expr:alt="data:post.title"/>
+                        <code><time expr:datetime='data:post.date.iso8601'><data:post.date/></time></code>
+                        <h2><data:post.title/></h2>
+                        <div>
+                            <b:loop values='data:post.labels' var='label'>
+                                <code><data:label.name/></code>
+                            </b:loop>
+                        </div>
+                    </a>
+                </b:loop>
+            </main>
+            <!-- Articles end -->
+
+        </b:includable>
+    </b:widget>
+</b:section>
+
+</search-page>

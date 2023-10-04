@@ -1,0 +1,39 @@
+#_floating-action-btn {
+    align-items: center;
+    backdrop-filter: blur(8px);
+    background-color: rgb(var(--color-background-rgb) / .8);
+    border: 1px solid var(--color-background-outline);
+    border-radius: 50%;
+    box-shadow: 0 2px 4px var(--color-shadow);
+    bottom: -80px;
+    display: flex;
+    height: 64px;
+    justify-content: center;
+    position: fixed;
+    right: max(calc(calc(100vw - 1440px) / 2), 16px);
+    transition: all .3s;
+    width: 64px;
+    z-index: 3;
+
+    &[data-show] {
+        bottom: 16px;
+    }
+
+    @media (hover: hover) {
+        &:hover {
+            background-color: var(--color-background-hover);
+        }
+    }
+
+    &:active {
+        background-color: var(--color-background-hover);
+
+        > * {
+            scale: .8;
+        }
+    }
+
+    > * {
+        transition: all .25s;
+    }
+}

@@ -1,0 +1,72 @@
+<scripts>
+
+<!-- More posts begin -->
+<script><![CDATA[
+(() => {
+    const maxResultPosts = 15;
+    let
+        elQuery = (selector, parent = document) => parent.querySelector(selector),
+        setInnerEl = (element, value) => { element.innerHTML = value },
+        getInnerEl = (element) => element.innerHTML,
+        getOuterEl = (element) => element.outerHTML,
+        setAttr = (element, qualifiedName, value) => element.setAttribute(qualifiedName, value),
+        h = (tagName, attr={children: []}) => {
+            const e = document.createElement(tagName)
+            for (const [key, value] of Object.entries(attr)){
+                if (key == 'children'){
+                    setInnerEl(e, value.map(v => {
+                        if (v instanceof Element) return getOuterEl(v)
+                        else if (typeof v == 'string') return v
+                        return ''
+                    }).join(''))
+                } else setAttr(e, key, value)
+            }
+            return e
+        },
+        index = 1,
+        isNoMore = false,
+        url = index => '<data:blog.homepageUrl/>/feeds/posts/default?start-index=' + (index * maxResultPosts + 1) + `&max-results=${maxResultPosts}&alt=json`
+    ;
+
+    window.onscroll = ev => {
+        if (document.body.scrollHeight - document.body.scrollTop <= 200 && !isNoMore) {
+            fetch(url(index)).then(res => res.json()).then(json => {
+                const mainEl = elQuery('main');
+                const posts = json.feed.entry;
+
+                if (!posts) {
+                    isNoMore = true;
+                    return;
+                }
+
+                for (const post of posts){
+                    const
+                        title = post.title.$t,
+                        date = new Date(Date.parse(post.published.$t)),
+                        labels = post.category ?? [],
+                        thumbnailUrl = post.media$thumbnail.url ?? '',
+                        url = post.link[4].href
+                    ;
+                    setInnerEl(
+                        mainEl,
+                        getInnerEl(mainEl)
+                        + getOuterEl(h('a', {href: url, itemprop: "blogPost", itemscope: '', itemtype: 'https://schema.org/BlogPosting', children: [
+                            h('meta', {content: thumbnailUrl.replace('/s72', '/s500'), itemprop: 'thumbnailUrl'}),
+                            h('meta', {content: url, itemprop: 'url'}),
+                            h('meta', {content: labels.map(e => e.term).join(','), itemprop: 'keywords'}),
+                            h('img', {itemprop: 'image', alt: title, src: thumbnailUrl.replace('/s72', '/s500')}),
+                            h('code', {children: [h('time', {itemprop: 'datePublished', datetime: date.toISOString(), children: [date.toLocaleDateString("id-ID", {year: 'numeric', month: 'long', day: 'numeric'})]})]}),
+                            h('h2', {itemprop: "headline", children: [title]}),
+                            h('div', {children: labels.map(e => h('code', {children: [e.term]}))})
+                        ]}))
+                    );
+                }
+            });
+            ++index;
+        }
+    };
+})()
+]]></script>
+<!-- More posts end -->
+
+</scripts>
